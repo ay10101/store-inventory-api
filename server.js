@@ -27,8 +27,14 @@ app.get('/', (req, res) => {
 app.use('/api/products', productRoutes);
 
 // ── MongoDB Connection & Server Start ──────────────────────
+const MONGODB_URI = process.env.MONGODB_URI;
+if (!MONGODB_URI) {
+  console.error('❌ MONGODB_URI is not set. Please add it to your environment variables.');
+  process.exit(1);
+}
+
 mongoose
-  .connect(process.env.MONGODB_URI)
+  .connect(MONGODB_URI)
   .then(() => {
     console.log('✅ Connected to MongoDB');
     app.listen(PORT, () => {
