@@ -1,0 +1,19 @@
+{
+  "name": "store-inventory-api",
+  "version": "1.0.0",
+  "description": "Backend API for retail store inventory management",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": ["inventory", "api", "express", "mongodb"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.12.1"
+  }
+}
